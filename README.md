@@ -10,8 +10,12 @@ Aquí explico brevemente cómo abordé cada problema:
 - **Problema 2 (Simulación de Fluido 3D):** Creé un "cubo" de datos de 3x3x3 para representar el espacio. Puse una presión alta en el centro y, para simular cómo se expande la onda, usé un filtro que calcula el promedio de las celdas vecinas. Esto actualiza el estado del fluido en un solo paso.
 - **Problema 3 (Imágenes Médicas 3D):** Simulé un volumen de imágenes médicas con un poco de "ruido" aleatorio. Para limpiarlo, hice un ciclo que recorre el volumen capa por capa (como si fueran hojas ojeadas) y le apliqué un filtro de promedio a cada capa 2D para suavizar la imagen.
 - **Problema 4 (Tabla de Sensores):** Usé una matriz de 5x5 donde las filas son el tiempo y las columnas son los sensores. Usando las funciones matemáticas de la librería, calculé el promedio y la desviación estándar indicándole que lo haga por columnas (por sensor). Al final, lo mostré todo en un mapa de calor para que sea más fácil de entender visualmente.
-- **Problema 5 (Transformación de Coordenadas):** Guardé las coordenadas $(x, y)$ de un rectángulo en una matriz. Para girarlo 45 grados, creé una matriz de rotación usando senos y cosenos:
-  $$R = \begin{pmatrix} \cos(45^\circ) & -\sin(45^\circ) \\ \sin(45^\circ) & \cos(45^\circ) \end{pmatrix}$$
+
+* **Problema 5 (Transformación de Coordenadas):** Guardé las coordenadas (x, y) de un rectángulo en una matriz. Para girarlo 45 grados, creé una matriz de rotación usando senos y cosenos:
+
+  R = | cos(45°) -sin(45°) |
+  | sin(45°) cos(45°) |
+
   Luego, multipliqué la matriz de los puntos por esta matriz de rotación, lo que me dio las nuevas coordenadas exactas del rectángulo ya inclinado.
 
 ## Enfoque Utilizado y Eficiencia
